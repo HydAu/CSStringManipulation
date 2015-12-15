@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+// First working attempt - single pattern value - no error checking
+// variable names yet to be cleaned up
+
+namespace numbersPatterns1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+           int nTimes = 0;
+           nTimes = numbers(12,1);
+           Console.WriteLine(nTimes);
+           Console.ReadLine();
+
+        }
+        static public int numbers(int n, int pattern)
+        {
+            int result=0;
+            
+            string strPattern;
+            string nString="";
+            nString = pattern.ToString();
+            for (int i = 0; i < n; i++)
+            {
+                strPattern = i.ToString();
+                for (int i2 = 0; i2 < strPattern.Length; i2++)
+                {
+                    for (int i3 = 0; i3 < (i2.ToString().Length); i3++)
+                    {
+                        if (strPattern.Contains(nString[0]) )
+                        {
+                            result++;
+                        }   
+                    }
+                  
+                }          
+            }
+            
+            return (result);
+        }
+    }
+}
